@@ -1,0 +1,11 @@
+[
+  {
+    "table": "mascotas",
+    "id": 1782347555310,
+    "nombre": "Lisi",
+    "tipo": "Perro",
+    "raza": "Pitbull",
+    "edad": "3",
+    "dueno": "Armengol cruz"
+  }
+]
