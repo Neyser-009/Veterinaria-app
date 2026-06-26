@@ -1,0 +1,34 @@
+[
+  {
+    "table": "estudiantes",
+    "id": 1780093622930,
+    "nombre": "Juana Perez",
+    "edad": 22,
+    "sexo": "Femenino",
+    "carrera": "Administracion de Empresas"
+  },
+  {
+    "table": "estudiantes",
+    "id": 1781900132959,
+    "nombre": "Neyser velasquez",
+    "edad": "20",
+    "sexo": "M",
+    "carrera": "Ingenieria en sistemas"
+  },
+  {
+    "table": "estudiantes",
+    "id": 1781900424577,
+    "nombre": "oral lopez",
+    "edad": "19",
+    "sexo": "M",
+    "carrera": "Farmacia"
+  },
+  {
+    "table": "estudiantes",
+    "id": 1782346105069,
+    "nombre": "d",
+    "edad": "34",
+    "sexo": "M",
+    "carrera": "sd"
+  }
+]
