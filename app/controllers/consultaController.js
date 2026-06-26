@@ -34,12 +34,12 @@ export default class ConsultaController {
       },
     ]);
 
-    console.log(chalk.bgGray.black(setup.awaitTime));
+    console.log(chalk.bgCyan.black(setup.awaitTime));
   }
 
   async menu() {
     console.clear();
-    console.log(chalk.bgCyan.white("**** 🩺 Menú de Consultas ****"));
+    console.log(chalk.bgMagenta.white("**** 🩺 Menú de Consultas ****"));
     const setup = await inquirer.prompt([
       {
         type: "select",
@@ -60,13 +60,13 @@ export default class ConsultaController {
     } else if (opcion == 2) {
       await this.create();
     } else {
-      console.log(chalk.bgRed.white("Opción no válida"));
+      console.log(chalk.bgRedBright.black("Opción no válida"));
     }
   }
 
   async create() {
     console.clear();
-    console.log(chalk.bgGreen.white("🩺 Registrando consulta..."));
+    console.log(chalk.bgGreenBright.black("🩺 Registrando consulta..."));
 
     const payload = await inquirer.prompt([
       {
@@ -135,28 +135,28 @@ export default class ConsultaController {
       diagnostico: payload.diagnostico,
       tratamiento: payload.tratamiento,
     });
-
     console.log();
-    console.log(chalk.bgGreen.white("✔ Consulta registrada exitosamente"));
+    console.log(chalk.bgGreenBright.black("✔ Consulta registrada exitosamente"));
 
     await this.await();
   }
-
   async read() {
-    console.log(chalk.bgBlue.white("📋 Mostrando consultas registradas..."));
+    console.log(chalk.bgCyan.white("📋 Mostrando consultas registradas..."));
     console.log();
+
     const consultas = await this.consulta.load();
+
     if (consultas.length === 0) {
-      console.log(chalk.yellow("No hay consultas registradas aún."));
+      console.log(chalk.magenta("No hay consultas registradas aún."));
     } else {
       console.table(consultas);
     }
     console.log();
     await this.await();
   }
-
   async init() {
     let opcion;
+
     do {
       console.clear();
       opcion = await this.menu();

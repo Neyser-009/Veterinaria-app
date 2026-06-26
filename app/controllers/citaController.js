@@ -34,12 +34,12 @@ export default class CitaController {
       },
     ]);
 
-    console.log(chalk.bgGray.black(setup.awaitTime));
+    console.log(chalk.bgCyan.black(setup.awaitTime));
   }
 
   async menu() {
     console.clear();
-    console.log(chalk.bgYellow.black("**** 📅 Menú de Citas ****"));
+    console.log(chalk.bgMagenta.white("**** 📅 Menú de Citas ****"));
     const setup = await inquirer.prompt([
       {
         type: "select",
@@ -60,13 +60,13 @@ export default class CitaController {
     } else if (opcion == 2) {
       await this.create();
     } else {
-      console.log(chalk.bgRed.white("Opción no válida"));
+      console.log(chalk.bgRedBright.black("Opción no válida"));
     }
   }
 
   async create() {
     console.clear();
-    console.log(chalk.bgGreen.white("📅 Agendando cita..."));
+    console.log(chalk.bgGreenBright.black("📅 Agendando cita..."));
 
     const payload = await inquirer.prompt([
       {
@@ -138,17 +138,17 @@ export default class CitaController {
     });
 
     console.log();
-    console.log(chalk.bgGreen.white("✔ Cita agendada exitosamente"));
+    console.log(chalk.bgGreenBright.black("✔ Cita agendada exitosamente"));
 
     await this.await();
   }
 
   async read() {
-    console.log(chalk.bgBlue.white("📋 Mostrando citas agendadas..."));
+    console.log(chalk.bgCyan.white("📋 Mostrando citas agendadas..."));
     console.log();
     const citas = await this.cita.load();
     if (citas.length === 0) {
-      console.log(chalk.yellow("No hay citas agendadas aún."));
+      console.log(chalk.magenta("No hay citas agendadas aún."));
     } else {
       console.table(citas);
     }
